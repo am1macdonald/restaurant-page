@@ -1,0 +1,15 @@
+{
+  "name": "restaurantpage",
+  "version": "1.0.0",
+  "description": "A dynamically rendered restaurant home page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"none specified\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
