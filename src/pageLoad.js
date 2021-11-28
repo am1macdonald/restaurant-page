@@ -75,13 +75,27 @@ function pageLoad(){
 
         clearDoc(main);
 
+        const menuDiv = document.createElement('div');
+        const menu = document.createElement('div');
+        menuDiv.id = 'menu-div';
+        menu.id = 'menu';
 
+        menuDiv.appendChild(menu);
 
-
-
+        main.appendChild(menuDiv);
     }
     function renderContact() {
         clearDoc(main);
+
+        const contactDiv = document.createElement('div');
+        const contactInfo = document.createElement('div');
+
+        contactDiv.id = 'contact-div';
+        contactInfo.id = 'contact-info';
+
+        contactDiv.appendChild(contactInfo);
+
+        main.appendChild(contactDiv);
     }
 
     /*

@@ -65,7 +65,7 @@ img {
 #menu-div {
   background-color: pink;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +78,7 @@ img {
 #contact-div {
   background-color: yellowgreen;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
