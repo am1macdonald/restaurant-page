@@ -97,56 +97,7 @@ function pageLoad(){
 
         main.appendChild(contactDiv);
     }
-
-    /*
-
-    < nav >
-        <H1>Restaurant de Lierre</H1>
-        <div id="nav-links">
-            <button id="menu-btn" class="nav-btn">Menu</button>
-            <button id="contact-btn" class="nav-btn">Contact</button>
-            <button id="top-btn" class="nav-btn">Top</button>
-        </div>
-    </nav >
-    <main>
-        <div id="img-div">
-                <img src="..\src\nick-karvounis-Ciqxn7FE4vE-unsplash.jpg" alt="Une image d'un bon restaurant/A nice restaurant picture.">
-        </div>
-
-        <div id="hero-div">
-            <div id="hero">
-
-            </div>
-        </div>
-
-
-
-    // UP TO HERE
-
-
-
-        <div id="menu-div">
-            <div id="menu"></div>
-        </div>
-        <div id="contact-div">
-            <div id="contact-info"></div>
-        </div>
-    </main>
-    <footer>
-        <div id="footer-stuff">
-            <div id="links">
-
-            </div>
-            <div id="credits">
-
-            </div>
-        </div>
-    </footer>
-
-    */
 }
-
-
 export {
     pageLoad
 }
