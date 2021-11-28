@@ -28,6 +28,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  height: 86vh;
 }
 footer {
   background-color: red;
@@ -50,7 +51,7 @@ img {
 }
 #hero-div {
   width: 100vw;
-  height: 93vh;
+  height: 100%;
   background-color: pink;
   display: flex;
   justify-content: center;

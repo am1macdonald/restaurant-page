@@ -10,8 +10,7 @@ function pageLoad(){
     const imgDiv = document.createElement('div');
     const backgroundImg = document.createElement('IMG');
     const footer = document.createElement('footer');
-    const heroDiv = document.createElement('div');
-    const hero = document.createElement('div');
+
     pageTitle.innerHTML = 'Restaurant de Lierre';
 
     navLinksDiv.id = 'nav-links';
@@ -23,6 +22,7 @@ function pageLoad(){
         newBtn.innerHTML = navBtnNames[i];
         newBtn.className = 'nav-btn';
         newBtn.id = `${navBtnNames[i]}-btn`.toLowerCase();
+        newBtn.addEventListener('click', launch);
         navLinksDiv.appendChild(newBtn);
     };
 
@@ -33,19 +33,56 @@ function pageLoad(){
     main.appendChild(imgDiv);
 
 
-
-    heroDiv.id = 'hero-div';
-    hero.id = 'hero';
-
-    heroDiv.appendChild(hero);
-
-    main.appendChild(heroDiv);
+    renderHome();
 
     page.appendChild(nav);
     page.appendChild(main);
     page.appendChild(footer);
     
+    function clearDoc(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+    function launch(e) {
+        console.log(e.target.id);
+        let btn = e.target.id;
+        if (btn == 'menu-btn') {
+            renderMenu();
+        }
+        else if (btn == 'contact-btn') {
+            renderContact();
+        }
+        else if (btn == 'home-btn') {
+            renderHome();
+        };
+    }
+    function renderHome() {
 
+        clearDoc(main);
+
+        const heroDiv = document.createElement('div');
+        const hero = document.createElement('div');
+
+        heroDiv.id = 'hero-div';
+        hero.id = 'hero';
+
+        heroDiv.appendChild(hero);
+
+        main.appendChild(heroDiv);
+    }
+    function renderMenu() {
+
+        clearDoc(main);
+
+
+
+
+
+    }
+    function renderContact() {
+        clearDoc(main);
+    }
 
     /*
 
@@ -62,17 +99,18 @@ function pageLoad(){
                 <img src="..\src\nick-karvounis-Ciqxn7FE4vE-unsplash.jpg" alt="Une image d'un bon restaurant/A nice restaurant picture.">
         </div>
 
+        <div id="hero-div">
+            <div id="hero">
+
+            </div>
+        </div>
+
 
 
     // UP TO HERE
 
 
 
-        <div id="hero-div">
-            <div id="hero">
-
-            </div>
-        </div>
         <div id="menu-div">
             <div id="menu"></div>
         </div>
@@ -93,6 +131,7 @@ function pageLoad(){
 
     */
 }
+
 
 export {
     pageLoad
