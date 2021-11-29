@@ -30,7 +30,7 @@ function pageLoad(){
     backgroundImg.setAttribute('src', "..\\src\\nick-karvounis-Ciqxn7FE4vE-unsplash.jpg");
     backgroundImg.setAttribute('alt', "Une image d'un bon restaurant / A nice restaurant picture.");
     imgDiv.appendChild(backgroundImg);
-    main.appendChild(imgDiv);
+    page.appendChild(imgDiv);
 
 
     renderHome();
