@@ -63,9 +63,18 @@ function pageLoad(){
 
         const heroDiv = document.createElement('div');
         const hero = document.createElement('div');
+        const heroTitle = document.createElement('h2');
+        const heroCopy = document.createElement('p');
 
         heroDiv.id = 'hero-div';
         hero.id = 'hero';
+
+        heroTitle.innerHTML = 'Bienvenue!';
+        heroCopy.innerText = 'Dine with us and experience the finest, french culinary experience this side of the Atlantic.'
+
+
+        hero.appendChild(heroTitle);
+        hero.appendChild(heroCopy);
 
         heroDiv.appendChild(hero);
 
