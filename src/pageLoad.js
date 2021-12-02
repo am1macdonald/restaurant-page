@@ -69,7 +69,7 @@ function pageLoad(){
         heroDiv.id = 'hero-div';
         hero.id = 'hero';
 
-        heroTitle.innerHTML = 'Bienvenue!';
+        heroTitle.innerHTML = 'Bienvenue,';
         heroCopy.innerText = 'Dine with us and experience the finest, french culinary experience this side of the Atlantic.'
 
 
