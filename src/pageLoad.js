@@ -17,7 +17,6 @@ function pageLoad(){
     nav.appendChild(pageTitle);
     nav.appendChild(navLinksDiv);
     for (let i = 0; i < navBtnNames.length; i++) {
-        console.log(`${navBtnNames[i]}-btn`.toLowerCase());
         let newBtn = navBtn.cloneNode();
         newBtn.innerHTML = navBtnNames[i];
         newBtn.className = 'nav-btn';
@@ -86,8 +85,47 @@ function pageLoad(){
 
         const menuDiv = document.createElement('div');
         const menu = document.createElement('div');
+        const menuHeader = document.createElement('h3');
+        const listDiv = document.createElement('div');
+        const menuList = document.createElement('ul');
+        const menuItem = document.createElement('li');
+        const menuPrice = document.createElement('p');
+        const menuFooter = document.createElement('p');
+        const menuItemsObj = {
+            'salade paysanne' : 'a salad with stuff in it',
+            'duck pâté en croûte' : 'ground duck liver stuffed into pastry',
+            'Boeuf Bourguignon' : 'cow meat simmered until connective tissue starts to break down',
+            'Coffee Crème Brûlée' : 'coffee and sugar in a bowl baked and then blasted with a blowtorch'
+        };       
+
         menuDiv.id = 'menu-div';
         menu.id = 'menu';
+        listDiv.id = 'menu-item-div';
+        menuList.id = 'menu-list';
+        menuHeader.innerHTML = 'Today\'s Menu';
+        menuPrice.innerHTML = '$200';
+        menuFooter.innerHTML = '*Please inquire about our wine list'
+
+        for (let key in menuItemsObj) {
+            const itemName = document.createElement('h4');
+            itemName.classList.add('menu-item');
+            const itemDescription = document.createElement('p');
+            itemDescription.classList.add('menu-item-description');
+            itemName.innerHTML = `${key}`;
+            itemDescription.innerHTML = `${menuItemsObj[key]}`;
+
+            const newMenuItem = menuItem.cloneNode();
+            newMenuItem.appendChild(itemName);
+            newMenuItem.appendChild(itemDescription);
+            menuList.appendChild(newMenuItem);
+            
+        };
+
+        menu.appendChild(menuHeader);
+        listDiv.appendChild(menuList);
+        listDiv.appendChild(menuPrice);
+        menu.appendChild(listDiv);
+        menu.appendChild(menuFooter);
 
         menuDiv.appendChild(menu);
 
