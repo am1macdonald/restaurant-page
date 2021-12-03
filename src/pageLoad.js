@@ -10,6 +10,7 @@ function pageLoad(){
     const imgDiv = document.createElement('div');
     const backgroundImg = document.createElement('IMG');
     const footer = document.createElement('footer');
+    const footerText = document.createElement('p');
 
     pageTitle.innerHTML = 'Restaurant de Lierre';
 
@@ -30,6 +31,10 @@ function pageLoad(){
     backgroundImg.setAttribute('alt', "Une image d'un bon restaurant / A nice restaurant picture.");
     imgDiv.appendChild(backgroundImg);
     page.appendChild(imgDiv);
+
+    footerText.innerHTML = 'Please call or email to make a reservation.';
+
+    footer.appendChild(footerText);
 
 
     renderHome();

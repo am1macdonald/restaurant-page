@@ -179,6 +179,16 @@ img {
   padding: 4vh 3vw;
   border-radius: 1px; 
 }
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer p {
+  font-family: 'Playfair Display', 'btn-font', serif;
+  font-size: clamp(10px, 2.2vmin, 15px); 
+  margin-left: 1vw;
+}
 
 @media only screen and (max-width: 740px) {
 
