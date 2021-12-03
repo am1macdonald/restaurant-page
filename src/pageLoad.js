@@ -32,12 +32,30 @@ function pageLoad(){
     imgDiv.appendChild(backgroundImg);
     page.appendChild(imgDiv);
 
-    footerText.innerHTML = 'Please call or email to make a reservation.';
 
-    footer.appendChild(footerText);
+    const makeFooter = function() {
 
+        const footerList = document.createElement('ul');
+        const footerLink = document.createElement('a');
+        const footerItem = document.createElement('li');
+        const footerLinks = {
+            'Github' : 'https://github.com/am1macdonald'
+        };
+
+        for (let link in footerLinks) {
+            let newItem = footerItem.cloneNode();
+            let newLink = footerLink.cloneNode();
+            newLink.innerHTML = `${link}`;
+            newLink.setAttribute('href', `${footerLinks[link]}`);
+            newItem.appendChild(newLink);
+            footerList.appendChild(newItem);
+        }
+        
+        footer.appendChild(footerList);
+    }
 
     renderHome();
+    makeFooter();
 
     page.appendChild(nav);
     page.appendChild(main);
@@ -49,7 +67,6 @@ function pageLoad(){
         }
     }
     function launch(e) {
-        console.log(e.target.id);
         let btn = e.target.id;
         if (btn == 'menu-btn') {
             renderMenu();
@@ -67,17 +84,14 @@ function pageLoad(){
 
         const heroDiv = document.createElement('div');
         const hero = document.createElement('div');
-        const heroTitle = document.createElement('h2');
         const heroCopy = document.createElement('p');
 
         heroDiv.classList.add('content-div');
         hero.id = 'hero';
 
-        heroTitle.innerHTML = 'Bienvenue,';
-        heroCopy.innerText = 'Dine with us and experience the finest, french culinary experience this side of the Atlantic.'
+        heroCopy.innerText = 'New York\'s finest french dining experience.'
 
 
-        hero.appendChild(heroTitle);
         hero.appendChild(heroCopy);
 
         heroDiv.appendChild(hero);
@@ -97,17 +111,17 @@ function pageLoad(){
         const menuPrice = document.createElement('p');
         const menuFooter = document.createElement('p');
         const menuItemsObj = {
-            'Salade Paysanne' : 'a salad with stuff in it.',
-            'Duck Pâté en Croûte' : 'ground duck liver stuffed into pastry.',
-            'Boeuf Bourguignon' : 'cow-type meat simmered until connective tissue starts to break down.',
-            'Coffee Crème Brûlée' : 'coffee and sugar in a bowl baked and then blasted with a blowtorch.'
+            'Salade Paysanne' : 'with lardons, walnuts, and Roquefort cheese',
+            'Duck Pâté en Croûte' : 'wild duck and porcini mushroom',
+            'Boeuf Bourguignon' : 'grass-fed beef in burgundy',
+            'Café Crème Brûlée' : 'rich cream & single origin coffee'
         };       
 
         menuDiv.classList.add('content-div');
         menu.id = 'menu';
         listDiv.id = 'menu-item-div';
         menuList.id = 'menu-list';
-        menuHeader.innerHTML = 'December\'s Menu';
+        menuHeader.innerHTML = `${todayMonth()}`;
         menuPrice.innerHTML = '$200';
         menuFooter.innerHTML = '*Please inquire about our wine list'
 
@@ -137,17 +151,61 @@ function pageLoad(){
 
         main.appendChild(menuDiv);
     }
+    function todayMonth() {
+
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+         'August', 'September', 'October', 'November', 'December'];
+        const date = new Date();
+        return months[date.getMonth()];
+    }
     function renderContact() {
         clearDoc(main);
 
         const contactDiv = document.createElement('div');
         const contactInfo = document.createElement('div');
+        const contactHeader = document.createElement('h3');
+        const contactList = document.createElement('ul');
+        const contactItem = document.createElement('li');
+        const contactsObject = {
+            'phone' : '1.888.898.9898',
+            'email' : 'reservations@lierre.com',
+        };
+        const map = document.createElement('iframe');
+        map.id = 'map';
+        const mapAttributes = {
+            'src': 'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96650.48124223364!2d-73.9510135497831!3d40.79879568055046!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1638571461264!5m2!1sen!2sca',
+            'allowfullscreen' : '',
+            'loading' : 'lazy'
+        }
+        for (let att in mapAttributes){
+            map.setAttribute(`${att}`, `${mapAttributes[att]}`);
+        }
+          /*  
+          <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96650.48124223364!2d-73.9510135497831!3d40.79879568055046!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1638571461264!5m2!1sen!2sca"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            */
+        contactHeader.innerHTML = 'Contact us';
+
+        for (let contact in contactsObject) {
+            let newContact = contactItem.cloneNode();
+            newContact.innerHTML = `${contact}: ${contactsObject[contact]}`;
+            contactList.appendChild(newContact);
+        };
 
         contactDiv.classList.add('content-div');
         contactInfo.id = 'contact-info';
 
-        contactDiv.appendChild(contactInfo);
+        
 
+
+        contactInfo.appendChild(contactHeader);
+        contactInfo.appendChild(contactList);
+        contactInfo.appendChild(map);
+
+
+        contactDiv.appendChild(contactInfo);
         main.appendChild(contactDiv);
     }
 }
