@@ -14,6 +14,9 @@
   font-family: 'btn-font';
   src: url(http://127.0.0.1:5500/dist/0f9e5e3cb0f1877cdb1c.ttf);
 }
+* {
+  font-family: 'Playfair Display', serif;
+}
 body {
   background-color: black;
   max-height: 100vh;
@@ -43,14 +46,14 @@ h1 {
 #nav-links {
   background-color: none;
   width: 50vw;
-  max-width: 240px;
+  max-width: 260px;
   display: flex;
   justify-content: space-between;
 }
 .nav-btn {
   border: none;
   background-color: inherit;
-  font-family: 'Playfair Display SC', 'btn-font' serif;
+  font-family: 'Playfair Display', 'btn-font', serif;
   font-size: clamp(18px, 4vmin, 20px);
 }
 .nav-btn:hover {
@@ -70,7 +73,7 @@ footer {
   width: 100vw;
   height: 10vh;  
   border-top: 1px 1px solid black;
-  box-shadow: 0px -3px 5px black;
+  box-shadow: 0px -2px 15px black;
 }
 img {
   width: auto;
@@ -96,7 +99,8 @@ img {
   align-items: center;
   
 }
-#hero-div {
+.content-div {
+  background-color: none;
   width: 100vw;
   height: 100%;
   display: flex;
@@ -119,44 +123,61 @@ img {
   font-size: clamp(20px, 5vmin, 25px);  
   hyphens: manual;
 }
-#menu-div {
-  background-color: none;
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 #menu {
   box-sizing: border-box;
-  width: 50vw;
-  height: 50vh;
+  width: clamp(430px, 50vw, 1000px);
+  height: 90%;
   background-color: #FAF9F6; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1vw;
+  padding: 4vh 3vw;
+  border-radius: 1px;
 }
-#menu h3 {
+#menu-list {
   width: 100%;
-  text-align: center;  
 }
-.menu-item {
-  font-family: 'Playfair Display SC', 'btn-font' serif;
-  font-style: italic;
+#menu h3 {  
+  font-size: clamp(35px, 8vmin, 40px);
+  width: 100%;
+  text-align: center; 
 }
-#contact-div {
-  background-color: yellowgreen;
-  width: 100vw;
-  height: 100%;
+#menu-item-div{
+  height: 70%;
+  overflow: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+#menu-item-div p {
+  width: 100%;
+  text-align: left;
+}
+.menu-item {  
+  font-size: clamp(13px, 2vmin, 5px);
+  box-sizing: border-box;
+  margin: 2vh 0vw;
+  text-align: left;
+  width: 100%;
+}
+.menu-item h4 {  
+  font-size: clamp(17px, 2.1vmin, 25px);
+  box-sizing: inherit;
+  font-family: 'Playfair Display', 'btn-font', serif;
+  font-style: italic;
+  margin: 0.3vh 0.3em;  
+}
 #contact-info {
-  background-color: purple;
-  width: 50vw;
-  height: 50vh;  
+  box-sizing: border-box;
+  width: clamp(100px, 50vw, 1000px);
+  height: 90%;
+  background-color: #FAF9F6; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4vh 3vw;
+  border-radius: 1px; 
 }
 
 @media only screen and (max-width: 740px) {
@@ -182,7 +203,7 @@ img {
   width: 70vw;
   }
   #menu {
-    width: 80vw;
-    height: 70vh;
+    width: clamp(0px, 80vw, 430px);
+    height: 90%;
   }
 }

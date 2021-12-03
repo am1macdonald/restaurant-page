@@ -5,7 +5,7 @@ function pageLoad(){
     const pageTitle = document.createElement('h1');
     const navLinksDiv = document.createElement('div');
     const navBtn = document.createElement('button');
-    const navBtnNames = ['Menu', 'Contact', 'Home'];
+    const navBtnNames = ['Home', 'Menu', 'Contact'];
     const main = document.createElement('main');
     const imgDiv = document.createElement('div');
     const backgroundImg = document.createElement('IMG');
@@ -65,7 +65,7 @@ function pageLoad(){
         const heroTitle = document.createElement('h2');
         const heroCopy = document.createElement('p');
 
-        heroDiv.id = 'hero-div';
+        heroDiv.classList.add('content-div');
         hero.id = 'hero';
 
         heroTitle.innerHTML = 'Bienvenue,';
@@ -92,29 +92,30 @@ function pageLoad(){
         const menuPrice = document.createElement('p');
         const menuFooter = document.createElement('p');
         const menuItemsObj = {
-            'salade paysanne' : 'a salad with stuff in it',
-            'duck pâté en croûte' : 'ground duck liver stuffed into pastry',
-            'Boeuf Bourguignon' : 'cow meat simmered until connective tissue starts to break down',
-            'Coffee Crème Brûlée' : 'coffee and sugar in a bowl baked and then blasted with a blowtorch'
+            'Salade Paysanne' : 'a salad with stuff in it.',
+            'Duck Pâté en Croûte' : 'ground duck liver stuffed into pastry.',
+            'Boeuf Bourguignon' : 'cow-type meat simmered until connective tissue starts to break down.',
+            'Coffee Crème Brûlée' : 'coffee and sugar in a bowl baked and then blasted with a blowtorch.'
         };       
 
-        menuDiv.id = 'menu-div';
+        menuDiv.classList.add('content-div');
         menu.id = 'menu';
         listDiv.id = 'menu-item-div';
         menuList.id = 'menu-list';
-        menuHeader.innerHTML = 'Today\'s Menu';
+        menuHeader.innerHTML = 'December\'s Menu';
         menuPrice.innerHTML = '$200';
         menuFooter.innerHTML = '*Please inquire about our wine list'
 
         for (let key in menuItemsObj) {
             const itemName = document.createElement('h4');
-            itemName.classList.add('menu-item');
+            itemName.classList.add('menu-item-title');
             const itemDescription = document.createElement('p');
             itemDescription.classList.add('menu-item-description');
             itemName.innerHTML = `${key}`;
             itemDescription.innerHTML = `${menuItemsObj[key]}`;
 
             const newMenuItem = menuItem.cloneNode();
+            newMenuItem.classList.add('menu-item');
             newMenuItem.appendChild(itemName);
             newMenuItem.appendChild(itemDescription);
             menuList.appendChild(newMenuItem);
@@ -137,7 +138,7 @@ function pageLoad(){
         const contactDiv = document.createElement('div');
         const contactInfo = document.createElement('div');
 
-        contactDiv.id = 'contact-div';
+        contactDiv.classList.add('content-div');
         contactInfo.id = 'contact-info';
 
         contactDiv.appendChild(contactInfo);
