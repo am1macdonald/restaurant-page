@@ -10,7 +10,6 @@ function pageLoad(){
     const imgDiv = document.createElement('div');
     const backgroundImg = document.createElement('IMG');
     const footer = document.createElement('footer');
-    const footerText = document.createElement('p');
 
     pageTitle.innerHTML = 'Restaurant de Lierre';
 
@@ -113,8 +112,8 @@ function pageLoad(){
         const menuItemsObj = {
             'Salade Paysanne' : 'with lardons, walnuts, and Roquefort cheese',
             'Duck Pâté en Croûte' : 'wild duck and porcini mushroom',
-            'Boeuf Bourguignon' : 'grass-fed beef in burgundy',
-            'Café Crème Brûlée' : 'rich cream & single origin coffee'
+            'Boeuf Bourguignon': 'grass-fed beef in burgundy',
+            'Café Crème Brûlée': 'rich cream & single origin coffee'
         };       
 
         menuDiv.classList.add('content-div');
@@ -180,12 +179,7 @@ function pageLoad(){
         for (let att in mapAttributes){
             map.setAttribute(`${att}`, `${mapAttributes[att]}`);
         }
-          /*  
-          <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96650.48124223364!2d-73.9510135497831!3d40.79879568055046!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1638571461264!5m2!1sen!2sca"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-            */
         contactHeader.innerHTML = 'Contact us';
 
         for (let contact in contactsObject) {

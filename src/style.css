@@ -139,7 +139,8 @@ img {
 }
 #menu-list {
   height: auto;
-  width: 100%;
+  width: 100%;  
+  overflow: auto;
 }
 #menu h3 {  
   font-size: clamp(35px, 8vmin, 40px);
@@ -148,7 +149,6 @@ img {
 }
 #menu-item-div{
   height: 70%;
-  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
