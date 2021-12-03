@@ -135,6 +135,7 @@ img {
   border-radius: 1px;
 }
 #menu-list {
+  height: auto;
   width: 100%;
 }
 #menu h3 {  
@@ -155,7 +156,7 @@ img {
   text-align: left;
 }
 .menu-item {  
-  font-size: clamp(13px, 2vmin, 5px);
+  font-size: clamp(12px, 2vmin, 5px);
   box-sizing: border-box;
   margin: 2vh 0vw;
   text-align: left;
