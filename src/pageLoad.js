@@ -26,7 +26,7 @@ function pageLoad(){
     };
 
     imgDiv.id = 'img-div';
-    backgroundImg.setAttribute('src', "..\\src\\nick-karvounis-Ciqxn7FE4vE-unsplash.jpg");
+    backgroundImg.setAttribute('src', "./4110222ed96379e04bc1.jpg");
     backgroundImg.setAttribute('alt', "Une image d'un bon restaurant / A nice restaurant picture.");
     imgDiv.appendChild(backgroundImg);
     page.appendChild(imgDiv);

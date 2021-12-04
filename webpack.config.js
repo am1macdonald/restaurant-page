@@ -23,6 +23,6 @@ module.exports = {
     },
     output: {
         filename: 'main.js',
-        clean: false,
+        clean: true,
     },
 };
